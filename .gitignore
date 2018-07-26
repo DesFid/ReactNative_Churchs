@@ -58,3 +58,4 @@ buck-out/
 # Ignore default.
 .gitignore
 .gitattributes
+.vscode
