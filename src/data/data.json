@@ -1,0 +1,50 @@
+[
+	{
+		key: 1,
+		name: "San Bartolo",
+		churchs: [
+			{
+				key: 1,
+				name: "Radical",
+				description: "This is the first church in San Bartolo",
+				cellphone: "091231211",
+				direction: "Av. Maldonado",
+				logo: "",
+				frontalImage: "",
+				backImage: "",
+				x: "21211221",
+				y: "12219331",
+			},
+			{
+				key: 2,
+				name: "The Real Change",
+				description: "The best option for the change!",
+				cellphone: "094324223",
+				direction: "Av. Maldonado OE-5332",
+				logo: "",
+				frontalImage: "",
+				backImage: "",
+				x: "21213445",
+				y: "12907871",
+			}
+		]
+	},
+	{
+		key: 2,
+		name: "Argelia",
+		churchs: [
+			{
+				key: 1,
+				name: "Argelia Church",
+				description: "A friendly church",
+				cellphone: "099809123",
+				direction: "Av. Argelia OE-2134",
+				logo: "",
+				frontalImage: "",
+				backImage: "",
+				x: "11123132",
+				y: "80983123",
+			}
+		]
+	}
+]
