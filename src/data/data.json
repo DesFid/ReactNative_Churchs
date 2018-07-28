@@ -6,12 +6,22 @@
             {
                 "key": 6,
                 "name": "Presence",
-                "image": "http://images2.fanpop.com/images/photos/6000000/Random-random-6064744-1280-800.jpg"
+                "image": "http://images2.fanpop.com/images/photos/6000000/Random-random-6064744-1280-800.jpg",
+                "description": "This is the best church for me, I am very happy for start my studies in this church",
+                "cellphone": "0995178642",
+                "street": "Av. Mariscal",
+                "chordX": "1121122321",
+                "chordY": "1124878568"
             },
             {
                 "key": 5,
-                "name": "Presence2",
-                "image": "http://images2.fanpop.com/images/photos/5500000/Random-wallpaper-random-5548400-1280-800.jpg"
+                "name": "Learning the bible",
+                "image": "http://images2.fanpop.com/images/photos/5500000/Random-wallpaper-random-5548400-1280-800.jpg",
+                "description": "You can learn about the bible and about God.",
+                "cellphone": "0839021331",
+                "street": "Av. Maldonado",
+                "chordX": "213245642",
+                "chordY": "214784685"
             }
         ]
     },
@@ -21,23 +31,43 @@
         "churchs": [
             {
                 "key": 4,
-                "name": "Presence3",
-				"image": "http://i2.cdn.cnn.com/cnnnext/dam/assets/141216183300-simpsons-25-anniversary-image-4-horizontal-large-gallery.jpg"
+                "name": "The know of Crist",
+                "image": "http://i2.cdn.cnn.com/cnnnext/dam/assets/141216183300-simpsons-25-anniversary-image-4-horizontal-large-gallery.jpg",
+                "description": "Know about Crist and about the things that he like that we learn",
+                "cellphone": "0784165124",
+                "street": "Av. Freljord",
+                "chordX": "2465456123",
+                "chordY": "2133546578"
 			},
             {
                 "key": 3,
-                "name": "Presence4",
-                "image": "https://yt3.ggpht.com/-FJXWJ1x1bEQ/AAAAAAAAAAI/AAAAAAAAAAA/ZtyuZ-elFr4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
+                "name": "Crist is the salvation",
+                "image": "https://yt3.ggpht.com/-FJXWJ1x1bEQ/AAAAAAAAAAI/AAAAAAAAAAA/ZtyuZ-elFr4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                "description": "You can believe in Crist for the salvation",
+                "cellphone": "0879456121",
+                "street": "Av. Shurima",
+                "chordX": "12451357896",
+                "chordY": "11132456849"
             },
             {
                 "key": 2,
-                "name": "Presence5",
-                "image": "http://pre02.deviantart.net/6e12/th/pre/i/2012/243/d/b/random_shrugpony_by_derpy333-d5d1ehk.png"
+                "name": "Feeling the presence",
+                "image": "http://pre02.deviantart.net/6e12/th/pre/i/2012/243/d/b/random_shrugpony_by_derpy333-d5d1ehk.png",
+                "description": "Feel the presence of God",
+                "cellphone": "098794521",
+                "street": "Av. The real Feel",
+                "chordX": "1237895795",
+                "chordY": "2214879868"
             },
             {
                 "key": 1,
-                "name": "Presence6",
-                "image": "https://wallpaperbrowse.com/media/images/keep-calm-and-be-random-437.png"
+                "name": "Real salvation",
+                "image": "https://wallpaperbrowse.com/media/images/keep-calm-and-be-random-437.png",
+                "description": "Know the real salvation",
+                "cellphone": "07896546541",
+                "street": "Av. Invocator",
+                "chordX": "123877895312",
+                "chordY": "213564987"
             }
         ]
     },
@@ -48,22 +78,42 @@
             {
                 "key": 7,
                 "name": "Presence3",
-                "image": "http://kb4images.com/images/random-image/37670495-random-image.jpg"
+                "image": "http://kb4images.com/images/random-image/37670495-random-image.jpg",
+                "description": "",
+                "cellphone": "",
+                "street": "",
+                "chordX": "",
+                "chordY": ""
             },
             {
                 "key": 8,
                 "name": "Presence4",
-                "image": "http://images4.fanpop.com/image/photos/17600000/Awesome-random-17652989-500-278.jpg"
+                "image": "http://images4.fanpop.com/image/photos/17600000/Awesome-random-17652989-500-278.jpg",
+                "description": "",
+                "cellphone": "",
+                "street": "",
+                "chordX": "",
+                "chordY": ""
             },
             {
                 "key": 9,
                 "name": "Presence5",
-                "image": "http://images4.fanpop.com/image/photos/17600000/Dandilion-random-17625773-545-389.jpg"
+                "image": "http://images4.fanpop.com/image/photos/17600000/Dandilion-random-17625773-545-389.jpg",
+                "description": "",
+                "cellphone": "",
+                "street": "",
+                "chordX": "",
+                "chordY": ""
             },
             {
                 "key": 10,
                 "name": "Presence6",
-                "image": "http://images4.fanpop.com/image/photos/17600000/something-random-17619782-380-380.jpg"
+                "image": "http://images4.fanpop.com/image/photos/17600000/something-random-17619782-380-380.jpg",
+                "description": "",
+                "cellphone": "",
+                "street": "",
+                "chordX": "",
+                "chordY": ""
             }
         ]
     }

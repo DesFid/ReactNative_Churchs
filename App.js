@@ -12,17 +12,42 @@ StyleSheet
 } from 'react-native';
 import List from './src/components/Church/List';
 import Header from './src/components/Header';
+
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      isOpen: false,
+      itemSelected: 'Home'
+    }
+    this.itemSelected = this.itemSelected.bind(this)
+  }
+  static navigationOptions = {
+    header: null
+  }
+  toggle(){
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  itemSelected(item){
+    this.setState({
+        itemSelected: item,
+        isOpen: false
+    })
+}paddingTop
+updateMenu(isOpen){
+  this.setState({isOpen})
+}
   render() {
     return (
       <View style={styles.container}>
-        <Header/>
-        <List/>
+        <Header navigation={this.props.navigation} toggle={this.toggle.bind(this)}/>
+        <List navigation={this.props.navigation}/>
       </View>
     )
   }
 }
-
 
 export default App
 

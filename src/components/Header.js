@@ -8,11 +8,13 @@ import {
     Button
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 const Header = props => (
     <View style={styles.container}>
         <Icon name='bars' color='white'/>
         <Image style={styles.logo} source={require('../images/logo.jpeg')} />
     </View>
+    
 )
 export default Header;
 const styles = StyleSheet.create({

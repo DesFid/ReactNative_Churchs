@@ -5,8 +5,10 @@ import {
 } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import App from '../App';
+import Details from './components/Church/Details';
 const IndexApp = StackNavigator({
-    Home: {screen: App}
+    Home: {screen: App},
+    Details: {screen: Details}
 },{
     headerMode: 'screen'
 })

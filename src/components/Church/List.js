@@ -5,15 +5,22 @@ import {
     StyleSheet,
     FlatList,
     Image,
-    ScrollView
+    ScrollView,
+    TouchableWithoutFeedback
 } from 'react-native';
 import {dataV} from '../../api/api';
 
 class List extends Component {
-    _renderItem(item) {
+
+  
+    
+    _renderItem(item) {        
+        const {navigate} = this.props.navigation;
         return (
             <View>
+                <TouchableWithoutFeedback onPress={() => navigate('Details', {item: item})}>
                 <Image style={styles.image} source={{ uri: item.image }} />
+                </TouchableWithoutFeedback>
             </View>
         )
     }
