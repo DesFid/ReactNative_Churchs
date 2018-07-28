@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import {TabViewAnimated, TabBar} from 'react-native-tab-view'
+import {TabViewAnimated, TabBar} from 'react-native-tab-view';
 import Contacts from './Contacts';
 import Information from './Information';
 
@@ -38,7 +38,7 @@ class TabsInfo extends Component {
             <TabViewAnimated
                 style={styles.container}
                 navigationState={this.state}
-                renderScene={this._renderScene.bind(this)}
+                renderScene={this._renderScene}
                 renderHeader={this._renderHeader}
                 onIndexChange={this._onIndexChange.bind(this)}
             />
