@@ -8,27 +8,38 @@ import {
     TouchableWithoutFeedback,
     ScrollView,
     Dimensions,
+    ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TabsInfo from './TabsInfo';
+import TextGradient from 'react-native-linear-gradient'
+
 const {width, height} = Dimensions.get('window')
 
 
 class Details extends Component {
     render() {
         const {params} = this.props.navigation.state;
-        const {image, description} = params.item;
+        const {name, image, description} = params.item;
+        const {contacts} = params.item;
         return (
             <ScrollView style={styles.container}>
-                <Image 
+                <ImageBackground 
                     style={styles.image}
                     source={{uri: image}}
-                />
-                
+                >
+                <View style={styles.nameContainer}>
+                <TextGradient colors={['#181818', '#181818', 'transparent']}>
+                    <Text style={[styles.text, styles.titleShow]}>{name}</Text>
+                </TextGradient>
+                </View>
+                </ImageBackground>   
                 <View style={styles.descriptionContainer}>
                 <View style={styles.description}>
                     <Text style={styles.text}>{description}</Text>
                     </View>
+                    </View>
+                    <TabsInfo data={contacts}/>
                     <View style={styles.iconContainer}>
                         <View style={styles.myMapIcon}>
                             <Icon 
@@ -39,14 +50,20 @@ class Details extends Component {
                         <Text style={styles.text}>Set</Text>
                         </View>
                     </View>
-                </View>
-                <TabsInfo/>
             </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    nameContainer: {
+        backgroundColor: 'transparent',
+    },
+    titleShow: {
+        fontSize: 30,
+        paddingLeft: 10,
+        marginBottom: 10
+    },
     container: {
         flex: 1,
         backgroundColor: '#181818'
@@ -66,6 +83,8 @@ const styles = StyleSheet.create({
     iconContainer: {
         flexDirection: 'row',
         marginVertical: 30,
+        paddingHorizontal: 20,
+        paddingTop: 20
     },
     mapIcon: {
         height: 28

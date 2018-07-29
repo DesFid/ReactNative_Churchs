@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import {TabViewAnimated, TabBar} from 'react-native-tab-view';
+import { View, Text, StyleSheet, Platform } from 'react-native';
+import { TabViewAnimated, TabViewPagerScroll, TabViewPagerPan, TabBar } from 'react-native-tab-view'
 import Contacts from './Contacts';
 import Information from './Information';
 
@@ -20,27 +20,30 @@ class TabsInfo extends Component {
         this.setState({index})
     }
     _renderHeader(props) {
-        return <TabBar {...props} />
+        return <TabBar {...props} style={styles.container}/>
     }
     _renderScene({route}) {
         switch (route.key) {
             case '1':
                 return <Information />
             case '2':
-                return <Contacts />
+                return <Contacts contacts={this.props.data}/>
             default:
                 return null
         }
     }
-    
+    _renderPager(props){
+        return (Platform.OS === 'ios') ? <TabViewPagerScroll {...props} /> : <TabViewPagerPan {...props} />
+      }
     render() {
         return (
             <TabViewAnimated
                 style={styles.container}
                 navigationState={this.state}
-                renderScene={this._renderScene}
+                renderScene={this._renderScene.bind(this)}
                 renderHeader={this._renderHeader}
                 onIndexChange={this._onIndexChange.bind(this)}
+                renderPager={this._renderPager.bind(this)}
             />
         )
     }
@@ -48,7 +51,8 @@ class TabsInfo extends Component {
 
 const styles = StyleSheet.create({
     container: {
-    flex : 1
+    flex : 1,
+    borderColor: 'black',
     }
 })
 export default TabsInfo
