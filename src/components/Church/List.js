@@ -38,7 +38,7 @@ class List extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View>
+                <View style={styles.listContainer}>
                     <Text style={styles.text}>My List</Text>
                     <ScrollView>
                         {
@@ -73,5 +73,9 @@ const styles = StyleSheet.create({
     image: {
         width: 120,
         height: 180,
+    },
+    listContainer: {
+        paddingLeft: 10,
+        paddingRight: 10,
     }
 })

@@ -1,7 +1,7 @@
 [
     {
         "key": 1,
-        "country": "eeuu",
+        "country": "EEUU",
         "churchs": [
             {
                 "key": 6,
@@ -59,7 +59,7 @@
     },
     {
         "key": 2,
-        "country": "ecuador",
+        "country": "Ecuador",
         "churchs": [
             {
                 "key": 4,
@@ -169,7 +169,7 @@
     },
     {
         "key": 3,
-        "country": "ecuador",
+        "country": "Mexico",
         "churchs": [
             {
                 "key": 7,
