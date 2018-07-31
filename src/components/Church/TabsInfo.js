@@ -32,7 +32,7 @@ class TabsInfo extends Component {
                 return null
         }
     }
-    _renderPager(props){
+    _renderPage(props){
         return (Platform.OS === 'ios') ? <TabViewPagerScroll {...props} /> : <TabViewPagerPan {...props} />
       }
     render() {
@@ -43,7 +43,7 @@ class TabsInfo extends Component {
                 renderScene={this._renderScene.bind(this)}
                 renderHeader={this._renderHeader}
                 onIndexChange={this._onIndexChange.bind(this)}
-                renderPager={this._renderPager.bind(this)}
+                renderPager={this._renderPage.bind(this)}
             />
         )
     }

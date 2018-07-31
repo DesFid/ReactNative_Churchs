@@ -6,15 +6,16 @@
 
 import React, { Component } from 'react';
 import {
-View,
-Text,
-StyleSheet
+  View,
+  Text,
+  StyleSheet
 } from 'react-native';
 import List from './src/components/Church/List';
 import Header from './src/components/Header';
+import TabsFooter from './src/components/Footer';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       isOpen: false,
@@ -25,25 +26,25 @@ class App extends Component {
   static navigationOptions = {
     header: null
   }
-  toggle(){
+  toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
-  itemSelected(item){
+  itemSelected(item) {
     this.setState({
-        itemSelected: item,
-        isOpen: false
+      itemSelected: item,
+      isOpen: false
     })
-}paddingTop
-updateMenu(isOpen){
-  this.setState({isOpen})
-}
+  } paddingTop
+  updateMenu(isOpen) {
+    this.setState({ isOpen })
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Header navigation={this.props.navigation} toggle={this.toggle.bind(this)}/>
-        <List navigation={this.props.navigation}/>
+        <Header navigation={this.props.navigation} toggle={this.toggle.bind(this)} />
+        <List navigation={this.props.navigation} />
       </View>
     )
   }
