@@ -5,6 +5,8 @@ class MapTest extends Component {
   constructor() {
     super()
     this.state = {
+      x: null,
+      y: null,
       region: {
         longitude: null,
         latitude: null,
@@ -13,7 +15,7 @@ class MapTest extends Component {
       }
     }
   }
-  
+
   calcDelta(lat, lon, accuracy) {
     const oneDegreeLongituInMeters = 111;
     const circunference = (40075 / 360)
@@ -54,7 +56,7 @@ class MapTest extends Component {
           provider={PROVIDER_GOOGLE}
           initialRegion={this.state.region}
         >
-        <MapView.Marker
+          <MapView.Marker
             coordinate={this.marker()}
             title="Current site"
             description="This is the current site"
@@ -65,11 +67,12 @@ class MapTest extends Component {
   }
 }
 const styles = StyleSheet.create({
-  container: { flex: 1,
+  container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-   },
+  },
   map: { ...StyleSheet.absoluteFillObject }
 })
 export default MapTest

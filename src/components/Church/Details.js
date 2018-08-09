@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TabsInfo from './TabsInfo';
-import TextGradient from 'react-native-linear-gradient'
+import TextGradient from 'react-native-linear-gradient';
 
 const {width, height} = Dimensions.get('window')
 

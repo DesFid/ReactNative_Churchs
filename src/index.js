@@ -31,6 +31,7 @@ const AppNavigator = createBottomTabNavigator(Routes,
 
 const navReducer = (state, action) => {
     const newState = AppNavigator.router.getStateForAction(action, state)
+    console.log(newState || state)
     return newState || state
 }
 
