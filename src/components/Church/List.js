@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {dataV} from '../../api/api';
 
+
 class List extends Component {
     _renderItem(item) {        
         const {navigate} = this.props.navigation;

@@ -15,6 +15,7 @@ import { Provider, connect } from 'react-redux';
 import React, {Component} from 'react';
 import Routes from './config/routes';
 import getStore from './store'
+
 const AppNavigator = createBottomTabNavigator(Routes,
     {
         tabBarOptions: {
