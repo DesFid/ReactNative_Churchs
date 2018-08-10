@@ -11,6 +11,7 @@ import {
     createReactNavigationReduxMiddleware,
     createNavigationReducer,
 } from 'react-navigation-redux-helpers';
+
 import { Provider, connect } from 'react-redux';
 import React, {Component} from 'react';
 import Routes from './config/routes';
