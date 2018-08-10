@@ -26,6 +26,7 @@ class App extends Component {
   static navigationOptions = {
     header: null
   }
+  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
