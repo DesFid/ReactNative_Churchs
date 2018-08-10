@@ -1,12 +1,13 @@
-// import {
-//     FETCHING_DATA, 
-//     FETCHING_DATA_SUCCESS,
-//     FETCHING_DATA_ERROR} from '../constants/';
+import {
+    FETCHING_DATA,
+    FETCHING_DATA_SUCCESS,
+    FETCHING_DATA_ERROR
+} from '../constants/';
 
-// import getDataApi from '../data/data.json'
+import getDataApi from '../data/data.json'
 
 export const getData = () => {
-    return{
+    return {
         type: FETCHING_DATA
     }
 }
@@ -23,3 +24,13 @@ export const getDataFailure = () => {
 }
 
 // async thunk fetchData
+export const fetchData = (neighborhood) => {
+    return (dispatch) => {
+        dispatch(getData())
+        getDataApi(neighborhood)
+            .then(([response, json]) => {
+                dispatch(getDataSuccess(json))
+            })
+            .catch((err) => dispatch(getDataFailure(err)))
+    }
+}

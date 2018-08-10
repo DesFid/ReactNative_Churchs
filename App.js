@@ -13,7 +13,7 @@ import {
 import List from './src/components/Church/List';
 import Header from './src/components/Header';
 import TabsFooter from './src/components/Footer';
-
+import { connect } from 'react-redux';
 class App extends Component {
   constructor(props) {
     super(props)
@@ -40,11 +40,14 @@ class App extends Component {
   updateMenu(isOpen) {
     this.setState({ isOpen })
   }
+
   render() {
     return (
       <View style={styles.container}>
         <Header navigation={this.props.navigation} toggle={this.toggle.bind(this)} />
-        <List navigation={this.props.navigation} />
+        <List
+          navigation={this.props.navigation}
+        />
       </View>
     )
   }
