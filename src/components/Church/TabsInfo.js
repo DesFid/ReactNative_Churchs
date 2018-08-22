@@ -25,7 +25,7 @@ class TabsInfo extends Component {
     _renderScene({route}) {
         switch (route.key) {
             case '1':
-                return <Information />
+                return <Information services={this.props.services}/>
             case '2':
                 return <Contacts contacts={this.props.data}/>
             default:

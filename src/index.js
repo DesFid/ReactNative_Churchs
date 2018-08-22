@@ -11,7 +11,6 @@ import {
     createReactNavigationReduxMiddleware,
     createNavigationReducer,
 } from 'react-navigation-redux-helpers';
-
 import { Provider, connect } from 'react-redux';
 import React, {Component} from 'react';
 import Routes from './config/routes';
@@ -33,7 +32,6 @@ const AppNavigator = createBottomTabNavigator(Routes,
 
 const navReducer = (state, action) => {
     const newState = AppNavigator.router.getStateForAction(action, state)
-    console.log(newState || state)
     return newState || state
 }
 

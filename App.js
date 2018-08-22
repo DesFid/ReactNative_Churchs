@@ -1,48 +1,100 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- *
- * @format
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import MapTest from './src/components/MyMap';
+import React, { Component } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView
+} from 'react-native';
+import SideMenu from 'react-native-side-menu'
+import List from './src/components/Church/List';
+import Header from './src/components/Header';
+import Menu from './src/components/Menu';
+import TabsFooter from './src/components/Footer';
+import { connect } from 'react-redux';
+import Services from './src/components/Church/Services'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isOpen: false,
+      itemSelected: 'Home'
+    }
+    this.getRows = this.getRows.bind(this);
+    this.itemSelected = this.itemSelected.bind(this);
+  }
+  static navigationOptions = {
+    header: null
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  
+  itemSelected(item) {
+    this.setState({
+      itemSelected: item,
+      isOpen: false
+    })
+  } 
 
-type Props = {};
-export default class App extends Component<Props> {
+  updateMenu(isOpen) {
+    this.setState({ isOpen })
+  }
+
+  getRows() {
+    const { churchs } = this.props;
+    const myChurchs = churchs;
+    return myChurchs
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <MapTest />
+      <View style={{ flex: 1 }}>
+        <SideMenu
+          style={{ flex: 1 }}
+          menu={<Menu
+            navigation={this.props.navigation}
+            itemSelected={this.itemSelected}
+            itemSelectedValue={this.state.itemSelected}
+          />}
+          isOpen={this.state.isOpen}
+          onChange={(isOpen) => this.updateMenu(isOpen)}
+        >
+          <ScrollView style={styles.container}>
+            <Header
+              navigation={this.props.navigation}
+              toggle={this.toggle.bind(this)}
+              style={{ flex: 1 }} />
+            {this.state.itemSelected === 'Home' ? <View style={{ flex: 1 }}>
+              <List
+                getRows={this.getRows}
+                navigation={this.props.navigation}
+              />
+            </View> :
+              <Services
+                navigation={this.props.navigation}
+                item={this.state.itemSelected}
+              />
+            }
+          </ScrollView>
+        </SideMenu>
       </View>
-    );
+    )
   }
 }
+
+export default connect(state => ({ churchs: state.churchs }))(App)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+    backgroundColor: 'black',
+  }
+})

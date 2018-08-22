@@ -13,43 +13,50 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TabsInfo from './TabsInfo';
 import TextGradient from 'react-native-linear-gradient';
+import Map from '../MyMap/MyMap';
 
-const {width, height} = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 
 class Details extends Component {
     render() {
-        const {params} = this.props.navigation.state;
-        const {name, image, description} = params.item;
-        const {contacts} = params.item;
+        const { params } = this.props.navigation.state;
+        const { name, image, description } = params.item;
+        const { contacts, services } = params.item;
+        const { navigate } = this.props.navigation;
         return (
             <ScrollView style={styles.container}>
-                <ImageBackground 
+                <ImageBackground
                     style={styles.image}
-                    source={{uri: image}}
+                    source={{ uri: image }}
                 >
-                <View style={styles.nameContainer}>
-                <TextGradient colors={['#181818', '#181818', 'transparent']}>
-                    <Text style={[styles.text, styles.titleShow]}>{name}</Text>
-                </TextGradient>
-                </View>
-                </ImageBackground>   
+                    <View style={styles.nameContainer}>
+                        <TextGradient colors={['#181818', '#181818', 'transparent']}>
+                            <Text style={[styles.text, styles.titleShow]}>{name}</Text>
+                        </TextGradient>
+                    </View>
+                </ImageBackground>
                 <View style={styles.descriptionContainer}>
-                <View style={styles.description}>
-                    <Text style={styles.text}>{description}</Text>
+                    <View style={styles.description}>
+                        <Text style={styles.text}>{description}</Text>
                     </View>
-                    </View>
-                    <TabsInfo data={contacts}/>
-                    <View style={styles.iconContainer}>
-                        <View style={styles.myMapIcon}>
-                            <Icon 
-                            style={styles.mapIcon}
-                            color='gray'
-                            size={28}
-                            name='map-marker'/>
+                </View>
+                <TabsInfo data={contacts} services={services} />
+                <View style={styles.iconContainer}>
+                    <View style={styles.myMapIcon}>
+                        <TouchableHighlight
+                            navigation={this.props.navigation}
+                            onPress={() => navigate('Map', {item: params.item})}
+                        >
+                            <Icon
+                                style={styles.mapIcon}
+                                color='gray'
+                                size={28}
+                                name='map-marker' />
+                        </TouchableHighlight>
                         <Text style={styles.text}>Set</Text>
-                        </View>
                     </View>
+                </View>
             </ScrollView>
         )
     }
@@ -70,7 +77,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: width,
-        height:300
+        height: 300
     },
     descriptionContainer: {
         paddingHorizontal: 20,
@@ -87,7 +94,7 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     mapIcon: {
-        height: 28
+        height: 35
     },
     myMapIcon: {
         alignItems: 'center',

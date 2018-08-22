@@ -1,9 +1,5 @@
-import data from '../data/data.json'
-
-function getData(json){
-    var dataJson = data;
-    return dataJson
+export default (service) =>
+{
+    return fetch(`http://10.42.0.1:8010/churchs/${service}`)
+    .then(response => Promise.all([response, response.json()]))
 }
-
-
-export const dataV = getData(data);

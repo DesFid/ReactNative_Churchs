@@ -2,18 +2,28 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 class Information extends Component {
+    renderServices() {
+        const res = this.props.services.map((item, i) => {
+            return (
+                <View style={styles.container} key={i}>
+                        <Text style={styles.text}>>{item}</Text>
+                </View>
+            )
+        })
+        return res;
+    }
     render() {
-        const info = "Hola";
         return (
             <View style={styles.container}>
-                <Text style={styles.text}>{info}</Text>
+                {this.renderServices()}
             </View>
         )
     }
 }
+
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        marginVertical: 10,
     },
     text: {
         color: 'white'

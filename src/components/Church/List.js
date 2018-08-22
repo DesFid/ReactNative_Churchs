@@ -8,16 +8,16 @@ import {
     ScrollView,
     TouchableWithoutFeedback
 } from 'react-native';
-import {dataV} from '../../api/api';
+import { dataV } from '../../api/api';
 
 
 class List extends Component {
-    _renderItem(item) {        
-        const {navigate} = this.props.navigation;
+    _renderItem(item) {
+        const { navigate } = this.props.navigation;
         return (
             <View>
-                <TouchableWithoutFeedback onPress={() => navigate('Details', {item: item})}>
-                <Image style={styles.image} source={{ uri: item.image }} />
+                <TouchableWithoutFeedback onPress={() => navigate('Details', { item: item, navigate: navigate })}>
+                    <Image style={styles.image} source={{ uri: item.image }} />
                 </TouchableWithoutFeedback>
             </View>
         )
@@ -37,13 +37,15 @@ class List extends Component {
         )
     }
     render() {
+        const { getRows } = this.props;
+        const get = getRows()
         return (
             <View style={styles.container}>
                 <View style={styles.listContainer}>
                     <Text style={styles.text}>My List</Text>
                     <ScrollView>
                         {
-                            dataV.map((item, index) => (
+                            getRows().map((item, index) => (
                                 <View key={item.key}>
                                     <Text style={styles.text}>{item.country}</Text>
                                     <FlatList

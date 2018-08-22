@@ -7,7 +7,10 @@ class Contacts extends Component {
             return (
                 <View style={styles.container} key={i}>
                     <View style={styles.textContainer}>
+                        <Text style={styles.text}>{item.position}</Text>
                         <Text style={styles.text}>{item.name}</Text>
+                        <Text style={styles.text}>{item.cellphone}</Text>
+                        <Text style={styles.text}>{item.email}</Text>
                     </View>
                 </View>
             )

@@ -2,9 +2,9 @@ import {
     FETCHING_DATA,
     FETCHING_DATA_SUCCESS,
     FETCHING_DATA_ERROR
-} from '../constants/';
+} from '../constants';
 
-import getDataApi from '../data/data.json'
+import getDataApi from '../api/api'
 
 export const getData = () => {
     return {
@@ -24,10 +24,10 @@ export const getDataFailure = () => {
 }
 
 // async thunk fetchData
-export const fetchData = (neighborhood) => {
+export const fetchData = (services) => {
     return (dispatch) => {
         dispatch(getData())
-        getDataApi(neighborhood)
+        getDataApi(services)
             .then(([response, json]) => {
                 dispatch(getDataSuccess(json))
             })
